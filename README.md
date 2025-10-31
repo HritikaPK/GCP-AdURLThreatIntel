@@ -7,32 +7,6 @@ This project demonstrates practical skills in cloud security engineering, threat
 
 GCP services used: Cloud Run, Cloud Functions, BigQuery, Cloud Storage, IAM, Cloud Logging
 ---
-flowchart TD
-
-User[User / Analyst] -->|Clicks "Run Scan"| UI[Streamlit Dashboard<br>(Cloud Run)]
-UI -->|HTTP Request| CF[Cloud Function<br>run_analysis()]
-
-subgraph GCP
-    CF -->|Reads URLs| CSV[urls.csv (packaged in function)]
-    CF --> Analyze[Analyze URLs<br>Static Rules & Scoring]
-    Analyze --> BQInsert[Insert Detections<br>into BigQuery]
-
-    BQInsert --> BQ[(BigQuery<br>threatintel.detections)]
-
-    Analyze --> Report[Generate Summary JSON]
-    Report --> GCS[Cloud Storage<br>reports/latest_report.json]
-
-    UI -->|Query Latest Results| BQ
-end
-
-style User fill:#f4f4f4,stroke:#333
-style UI fill:#4285F4,stroke:#0F47AF,color:white
-style CF fill:#34A853,stroke:#1B5E20,color:white
-style GCS fill:#FFB300,stroke:#B36B00
-style BQ fill:#5C6BC0,stroke:#283593,color:white
-style Analyze fill:#00ACC1,stroke:#006064,color:white
-style CSV fill:#e3e3e3,stroke:#666
-
 
 ## Overview
 
