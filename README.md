@@ -5,6 +5,7 @@ AdThreatIntel is a serverless threat-intelligence system that analyzes advertisi
 This project demonstrates practical skills in cloud security engineering, threat intelligence automation, and serverless architecture on Google Cloud.
 <img width="3595" height="1732" alt="image" src="https://github.com/user-attachments/assets/176ce118-1a40-4ccc-8518-5eb3aa191e35" />
 
+GCP services used: Cloud Run, Cloud Functions, BigQuery, Cloud Storage, IAM, Cloud Logging
 ---
 
 ## Overview
