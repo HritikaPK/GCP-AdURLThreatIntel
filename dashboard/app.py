@@ -19,7 +19,7 @@ if st.button("Run scan now"):
         st.error("CLOUD_FUNC_URL env var is not set.")
     else:
         try:
-            # POST is fine; your function can accept GET or POST
+            #function can accept GET or POST
             r = requests.post(CLOUD_FUNC_URL, timeout=30)
             r.raise_for_status()
             st.success("Scan triggered successfully!")
@@ -63,3 +63,4 @@ try:
         st.bar_chart(df["score"])
 except Exception as e:
     st.error(f"Error reading BigQuery: {e}")
+
